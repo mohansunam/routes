@@ -1,12 +1,11 @@
 import express from "express";
-import { getUsers } from "../controllers/userController.js";
-
+import { getAllUsers, loginUsers } from "../controllers/userController.js";
 
 const routes = express.Router();
 
-routes.route('/api/user').get((req, res)=>{
- getUsers(req, res);
-});
+routes.route('/').get(getAllUsers);
+routes.route('/login').post(loginUsers);
+
 export default routes;
 
 

@@ -1,6 +1,10 @@
 
 
-export const getUsers = (req, res) =>{
-  return res.status(200).json({data:'my name is chandra Mohan Sunam'});
+export const getAllUsers = (req, res) =>{
+  return res.status(200).json({});
+
+};
+export const loginUsers = (req, res) =>{
+  return res.status(200).json({});
 
 }
