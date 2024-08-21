@@ -1,15 +1,17 @@
 
 import express from "express";
 import productRoutes from './routes/productRoutes.js';
+import { getUsers } from "./controllers/userController.js";
 const port = 6000;
 const app = express();
 
-app.get('/', (req, res)=>{
-  res.status(200).json({data:'hello Mohan'})
+// app.get('/', (req, res)=>{
+//   res.status(200).json({data:'hello Mohan'})
 
-});
+// });
 
 app.use(productRoutes);
+app.use(getUsers);
 
 app.listen(port, (m)=>{
   console.log('connected')
