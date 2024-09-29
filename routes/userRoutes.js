@@ -1,13 +1,8 @@
 import express from "express";
-import { getAllUsers, loginUsers } from "../controllers/userController.js";
+import { getUser } from "../controllers/userController.js";
 
 const routes = express.Router();
 
-routes.route('/').get(getAllUsers);
-routes.route('/login').post(loginUsers);
+routes.route('/api/user').get((req, res) => getUser(req, res));
 
-export default routes;
-
-
-
-
+ export default routes;

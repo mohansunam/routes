@@ -1,19 +1,21 @@
 
 import express from "express";
-import productRoutes from './routes/productRoutes.js';
-import userRoutes from './routes/userRoutes.js';
+import userRoutes from './routes/userRoutes.js'
 
 const port = 6000;
-
 const app = express();
-app.use(express.json());
-app.use('api/products', productRoutes);
-app.use('api/user', userRoutes);
 
+app.use(express.json());
+
+app.get('/', (req, res)=>{
+ 
+ return res.status(201).json({data:'chandra Mohan'});
+});
+app.use(userRoutes);
+   
 
 app.listen(port, (m)=>{
-  console.log('connected')
-
+  console.log('Connected')
 
 })
 
